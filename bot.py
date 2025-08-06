@@ -33,7 +33,7 @@ class Bot:
         elif "shut down" in command:
             self.speech.speak("Shutting down. Talk to you later!")
             sys.exit()
-        elif "open bot settings" in command:
+        elif "open settings" in command:
             self.speech.speak("Opening settings.")
             self.settings.settings_menu()
         elif "tell me a fun fact" in command:
@@ -50,6 +50,8 @@ class Bot:
             self.games.RockPaperScissors()
         elif "what is the weather" in command:
             self.utils.GetWeather()
+        elif "is this word a palindrome" in command:
+            self.utils.IsPalindrome()
         else:
             self.speech.speak("I don't know how to respond to that yet.")
        
