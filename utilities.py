@@ -6,6 +6,7 @@ class Utilities:
     def __init__(self, speech):
         self.speech = speech
 
+
     def TellTime(self):
         now = datetime.now()
         current_time = now.strftime("%I:%M %p")
@@ -66,3 +67,25 @@ class Utilities:
         self.speech.speak(f"Current Temp: {temp}")
         self.speech.speak(f"Condition: {condition}")
         self.speech.speak(f"{period}: {short_desc}, {temp_forecast}")
+
+        
+    def IsPalindrome(self):
+        self.speech.speak("What word would you like to test")
+        s = self.speech.listen()
+        stack = []
+        mid = len(s) // 2
+
+        for i in range(mid):
+            stack.append(s[i])
+
+        if len(s) % 2 != 0:
+            mid += 1
+        
+        for i in range(mid, len(s)):
+            if s[i] != stack.pop():
+                self.speech.speak("The word is not a palindrome")
+                return 0
+        self.speech.speak("The word is a palindrome")    
+        
+        
+        
