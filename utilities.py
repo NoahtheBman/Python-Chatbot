@@ -85,7 +85,8 @@ class Utilities:
             if s[i] != stack.pop():
                 self.speech.speak("The word is not a palindrome")
                 return 0
-        self.speech.speak("The word is a palindrome")    
+        self.speech.speak("The word is a palindrome")   
+         
         
         
         
