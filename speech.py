@@ -1,5 +1,18 @@
+"""
+Source File: speech.py
+Author: Noah Boggess
+Purpose: Holds the bot's speech abilities.  
+Created 8/6/2025
+Last Modified 8/8/2025
+"""
 import pyttsx3
 import speech_recognition as sr
+
+"""
+SpeechEngine
+
+Purpose:  Creates the speech engine instance so that the bot can talk. 
+"""
 
 class SpeechEngine:
     def __init__(self, rate=150, volume=1.0, voice_index=0):
@@ -7,6 +20,8 @@ class SpeechEngine:
         self.volume = volume
         self.voice_index = voice_index
         self.recognizer = sr.Recognizer()
+
+    # Sets the engine instance EVERY TIME it speaks. Otherwise it will speak once and never agian. Thanks pyttsx3.  
 
     def speak(self, text):
         print(f"Speaking: {text}")
@@ -17,6 +32,8 @@ class SpeechEngine:
         engine.say(text)
         engine.runAndWait()
 
+    # Listens for audio from the user and translates it to a string.  
+    
     def listen(self):
         with sr.Microphone() as source:
             print("Listening...")
