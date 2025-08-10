@@ -13,3 +13,4 @@ Features
 -  Persistent settings for voice and volume
 -  Modular architecture for easy expansion
 
+If anyone has any suggestions on edits or updates I can make feel free to let me know. 
